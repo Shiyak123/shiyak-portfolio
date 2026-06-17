@@ -2,10 +2,10 @@ import projectsData from "../data/projects";
 
 export default function Projects() {
     return (
-        <section className="py-20 px-6">
+        <section className="py-20 px-6 bg-surface-2 dark:bg-surface-2">
             <div className="max-w-6xl mx-auto">
 
-                <h2 className="text-3xl font-bold text-center mb-12">
+                <h2 className="text-3xl font-bold text-center mb-12 text-primary">
                     My Projects
                 </h2>
 
@@ -13,13 +13,13 @@ export default function Projects() {
                     {projectsData.projects.map((project, index) => (
                         <div
                             key={index}
-                            className="p-6 rounded-xl shadow-md bg-white dark:bg-gray-800"
+                            className="p-6 rounded-xl shadow-md bg-surface border border-surface"
                         >
-                            <h3 className="text-xl font-bold mb-2">
+                            <h3 className="text-xl font-bold mb-2 text-primary">
                                 {project.title}
                             </h3>
 
-                            <p className="text-gray-600 dark:text-gray-300 mb-3">
+                            <p className="text-secondary mb-3">
                                 {project.description}
                             </p>
 
@@ -28,7 +28,7 @@ export default function Projects() {
                                 {project.techStack.map((tech, i) => (
                                     <span
                                         key={i}
-                                        className="text-xs px-2 py-1 bg-gray-200 dark:bg-gray-700 rounded"
+                                        className="text-xs px-2 py-1 bg-surface inline-block text-muted rounded"
                                     >
                                         {tech}
                                     </span>
@@ -37,10 +37,10 @@ export default function Projects() {
 
                             {/* Links */}
                             <div className="flex gap-4">
-                                <a href={project.links.github} className="text-blue-500">
+                                <a href={project.links.github} className="text-primary hover:underline">
                                     GitHub
                                 </a>
-                                <a href={project.links.live} className="text-green-500">
+                                <a href={project.links.live} className="text-primary hover:underline">
                                     Live
                                 </a>
                             </div>

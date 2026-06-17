@@ -4,6 +4,173 @@ html {
   scroll-behavior: smooth;
 }
 
+:root {
+  /* Brand palette (dark navy / teal tone) */
+  --color-primary: #38bdf8;
+  /* accent */
+  --color-primary-600: #0ea5c9;
+  /* accent dark */
+
+  /* Text hierarchy */
+  --text-primary: #e2e8f0;
+  /* heading / primary text */
+  --text-secondary: #94a3b8;
+  /* paragraph */
+  --text-muted: #cbd5e1;
+  /* muted */
+
+  /* Surfaces & borders */
+  --bg-page-light-1: #071421;
+  /* subtle page tint */
+  --surface: #0f172a;
+  --surface-2: #11263f;
+  --border: #32455f;
+  --card-shadow: 0 10px 30px rgba(2, 6, 23, 0.2);
+}
+
+/* Dark theme variable overrides (applied by adding `dark` class to html) */
+.dark {
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+
+  --surface: #071421;
+  --surface-2: #061325;
+  --border: #1f2937;
+  --color-primary: #38bdf8;
+  --color-primary-600: #0ea5c9;
+}
+
 body {
+  min-height: 100vh;
+  background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.08), transparent 25%),
+    linear-gradient(180deg, var(--surface-2) 0%, var(--surface-2) 100%);
+  color: var(--text-primary);
   transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Utility mapping: normalize frequently-used Tailwind color utilities to our variables.
+   This allows keeping existing Tailwind classes while enforcing a consistent palette. */
+
+/* Headings / primary text */
+.text-gray-900,
+.text-gray-800,
+.text-slate-900 {
+  color: var(--text-primary) !important;
+}
+
+/* Secondary / paragraph text */
+.text-gray-600,
+.text-gray-700,
+.text-slate-700,
+.text-gray-500 {
+  color: var(--text-secondary) !important;
+}
+
+/* Muted */
+.text-gray-500,
+.text-gray-400,
+.text-slate-400,
+.text-gray-300 {
+  color: var(--text-muted) !important;
+}
+
+/* Primary brand color (links, badges, accents) */
+.text-blue-500,
+.text-emerald-500 {
+  color: var(--color-primary) !important;
+}
+
+.bg-blue-500,
+.bg-emerald-500 {
+  background-color: var(--color-primary) !important;
+  color: #fff !important;
+}
+
+.hover\:bg-blue-600:hover,
+.hover\:bg-emerald-600:hover {
+  background-color: var(--color-primary-600) !important;
+}
+
+/* Page & section backgrounds */
+.bg-gray-50,
+.bg-white,
+.bg-white\/30 {
+  background-color: var(--surface) !important;
+}
+
+.dark .bg-gray-950,
+.dark .bg-gray-900,
+.dark .bg-white\/5,
+.dark .bg-gray-800 {
+  background-color: var(--surface) !important;
+}
+
+/* Card / surface */
+.bg-gray-100,
+.bg-gray-50 {
+  background-color: var(--surface-2) !important;
+}
+
+/* Borders */
+.border-gray-200,
+.border-slate-200 {
+  border-color: var(--border) !important;
+}
+
+.dark .border-gray-800,
+.dark .border-slate-800 {
+  border-color: var(--border) !important;
+}
+
+/* Buttons / primary actions */
+.btn-primary,
+.bg-blue-500 {
+  background-color: var(--color-primary) !important;
+  color: #fff !important;
+}
+
+.btn-primary:hover,
+.hover\:bg-blue-600:hover {
+  background-color: var(--color-primary-600) !important;
+}
+
+/* Small helpers */
+.text-primary {
+  color: var(--text-primary) !important;
+}
+
+.text-secondary {
+  color: var(--text-secondary) !important;
+}
+
+.text-muted {
+  color: var(--text-muted) !important;
+}
+
+.bg-surface {
+  background-color: var(--surface) !important;
+}
+
+.bg-surface-2 {
+  background-color: var(--surface-2) !important;
+}
+
+.border-surface {
+  border-color: var(--border) !important;
+}
+
+/* Ensure hover text link accents use primary */
+.hover\:text-blue-500:hover,
+.hover\:text-emerald-400:hover {
+  color: var(--color-primary) !important;
+}
+
+/* Improve contrast for dark mode inputs and cards */
+.dark .bg-white {
+  background-color: var(--surface) !important;
+}
+
+.dark .text-white {
+  color: var(--text-primary) !important;
 }

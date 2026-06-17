@@ -84,7 +84,7 @@ export default function Contact() {
                         value={form.name}
                         onChange={handleChange}
                         placeholder="Your Name"
-                        className="w-full p-3 rounded-lg bg-white dark:bg-gray-800"
+                        className="w-full p-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-slate-700 text-gray-900 dark:text-white placeholder:text-muted outline-none focus:ring-2 focus:ring-offset-1 focus:ring-sky-300"
                     />
                     {errors.name && <p className="text-red-500">{errors.name}</p>}
 
@@ -93,7 +93,7 @@ export default function Contact() {
                         value={form.email}
                         onChange={handleChange}
                         placeholder="Your Email"
-                        className="w-full p-3 rounded-lg bg-white dark:bg-gray-800"
+                        className="w-full p-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-slate-700 text-gray-900 dark:text-white placeholder:text-muted outline-none focus:ring-2 focus:ring-offset-1 focus:ring-sky-300"
                     />
                     {errors.email && <p className="text-red-500">{errors.email}</p>}
 
@@ -103,13 +103,13 @@ export default function Contact() {
                         onChange={handleChange}
                         placeholder="Your Message"
                         rows="5"
-                        className="w-full p-3 rounded-lg bg-white dark:bg-gray-800"
+                        className="w-full p-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-slate-700 text-gray-900 dark:text-white placeholder:text-muted outline-none focus:ring-2 focus:ring-offset-1 focus:ring-sky-300"
                     />
                     {errors.message && <p className="text-red-500">{errors.message}</p>}
 
                     <button
                         type="submit"
-                        className="w-full bg-blue-500 text-white py-3 rounded-lg"
+                        className="w-full btn-primary py-3 rounded-lg hover:bg-blue-600 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-sky-300"
                     >
                         {status === "sending"
                             ? "Sending..."

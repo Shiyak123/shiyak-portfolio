@@ -48,15 +48,15 @@ export default function Experience() {
     };
 
     return (
-        <section className="w-full py-20 px-6 bg-slate-50 dark:bg-slate-900/50">
+        <section className="w-full py-20 px-6 bg-surface-2">
             <div className="max-w-4xl mx-auto">
 
-                <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">
-                    Professional <span className="text-emerald-500">Experience</span>
+                <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-primary">
+                    Professional <span className="text-primary">Experience</span>
                 </h2>
 
                 <motion.div
-                    className="relative border-l border-slate-200 dark:border-slate-800 ml-4 space-y-12"
+                    className="relative border-l border-surface ml-4 space-y-12"
                     variants={containerVariants}
                     initial="hidden"
                     whileInView="visible"
@@ -64,21 +64,21 @@ export default function Experience() {
                     {experienceData.map((exp, index) => (
                         <motion.div key={index} variants={itemVariants} className="relative pl-8">
 
-                            <div className="absolute -left-5 top-1">
+                            <div className="absolute -left-5 top-1 text-white bg-primary rounded-full w-8 h-8 flex items-center justify-center">
                                 <FaBriefcase />
                             </div>
 
-                            <div className="p-6 bg-white dark:bg-slate-900 rounded-xl shadow">
+                            <div className="p-6 bg-surface rounded-xl shadow border border-surface">
 
-                                <h3 className="text-xl font-bold">{exp.role}</h3>
-                                <p className="text-emerald-500">{exp.company}</p>
+                                <h3 className="text-xl font-bold text-primary">{exp.role}</h3>
+                                <p className="text-secondary">{exp.company}</p>
 
-                                <div className="flex items-center gap-2 text-sm text-gray-500 mt-1">
+                                <div className="flex items-center gap-2 text-sm text-muted mt-1">
                                     <FaCalendarAlt />
                                     {exp.period}
                                 </div>
 
-                                <ul className="mt-4 space-y-2">
+                                <ul className="mt-4 space-y-2 text-secondary">
                                     {exp.responsibilities.map((task, i) => (
                                         <li key={i}>• {task}</li>
                                     ))}
@@ -86,7 +86,7 @@ export default function Experience() {
 
                                 <div className="flex flex-wrap gap-2 mt-4">
                                     {exp.skills.map((skill, i) => (
-                                        <span key={i} className="text-xs px-2 py-1 bg-gray-200 dark:bg-gray-800 rounded">
+                                        <span key={i} className="text-xs px-2 py-1 bg-surface text-muted rounded">
                                             {skill}
                                         </span>
                                     ))}

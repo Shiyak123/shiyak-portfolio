@@ -2,10 +2,10 @@ import skillsData from "../data/skills";
 
 export default function Skills() {
     return (
-        <section id="skills" className="py-24 px-6 bg-white dark:bg-gray-950">
+        <section id="skills" className="py-24 px-6 bg-surface-2 dark:bg-surface-2">
             <div className="max-w-6xl mx-auto">
 
-                <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-12">
+                <h2 className="text-3xl font-bold text-center text-primary mb-12">
                     Skills & Toolkit
                 </h2>
 
@@ -13,10 +13,10 @@ export default function Skills() {
                     {Object.entries(skillsData).map(([category, skills]) => (
                         <div
                             key={category}
-                            className="p-6 rounded-xl shadow-md bg-gray-50 dark:bg-gray-900"
+                            className="p-6 rounded-xl shadow-md bg-surface bg-surface-2 border border-surface"
                         >
                             {/* Category Title */}
-                            <h3 className="text-xl font-semibold mb-4 capitalize text-gray-800 dark:text-white">
+                            <h3 className="text-xl font-semibold mb-4 capitalize text-primary">
                                 {category}
                             </h3>
 
@@ -25,10 +25,10 @@ export default function Skills() {
                                 {skills.map((skill, index) => (
                                     <li
                                         key={index}
-                                        className="flex justify-between text-gray-700 dark:text-gray-300"
+                                        className="flex justify-between text-secondary"
                                     >
                                         <span>{skill.name}</span>
-                                        <span className="text-sm text-gray-500">
+                                        <span className="text-sm text-muted">
                                             {skill.level}
                                         </span>
                                     </li>

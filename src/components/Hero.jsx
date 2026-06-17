@@ -1,3 +1,4 @@
+import profileImage from "../assets/images/profile.jpg";
 import { motion } from "framer-motion";
 import {
     FaGithub,
@@ -10,25 +11,26 @@ export default function Hero() {
     return (
         <section
             id="home"
-            className="min-h-screen flex items-center bg-white dark:bg-gray-950 px-6 pt-24"
+            className="min-h-screen flex items-center bg-gradient-to-br from-[#071421] via-[#0b2b4b] to-[#0e3754] dark:from-[#040c18] dark:via-[#071426] dark:to-[#08172a] px-6 md:px-8 lg:px-10 pt-24 overflow-visible"
         >
             <div className="max-w-6xl mx-auto w-full grid md:grid-cols-2 gap-12 items-center">
 
                 {/* LEFT CONTENT */}
                 <motion.div
-                    initial={{ opacity: 0, x: -60 }}
-                    whileInView={{ opacity: 1, x: 0 }}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
                     transition={{ duration: 0.6 }}
+                    className="relative z-20"
                 >
-                    <p className="text-blue-500 font-medium">
+                    <p className="text-primary font-medium">
                         Full Stack Developer
                     </p>
 
-                    <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mt-2">
+                    <h1 className="text-4xl md:text-5xl font-bold text-primary mt-2">
                         Mohamed Shiyak
                     </h1>
 
-                    <p className="text-gray-600 dark:text-gray-400 mt-4 leading-relaxed">
+                    <p className="text-secondary mt-4 leading-relaxed">
                         I build scalable MERN applications with clean UI/UX and strong backend
                         architecture focused on performance and usability.
                     </p>
@@ -38,7 +40,7 @@ export default function Hero() {
                         {["React", "Node", "MongoDB", "Express", "Tailwind"].map((t) => (
                             <span
                                 key={t}
-                                className="px-3 py-1 text-sm rounded-full bg-blue-500/10 text-blue-600 dark:text-blue-300 border border-blue-400/20"
+                                className="px-3 py-1 text-sm rounded-full bg-surface text-primary border border-surface"
                             >
                                 {t}
                             </span>
@@ -49,21 +51,21 @@ export default function Hero() {
                     <div className="flex flex-wrap gap-4 mt-8">
                         <a
                             href="/cv.pdf"
-                            className="flex items-center gap-2 px-5 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition"
+                            className="flex items-center gap-2 px-5 py-3 btn-primary rounded-lg hover:bg-blue-600 transition"
                         >
                             <FaDownload /> Download CV
                         </a>
 
                         <a
                             href="#projects"
-                            className="px-5 py-3 border border-gray-300 dark:border-gray-700 rounded-lg text-gray-700 dark:text-white"
+                            className="px-5 py-3 border border-surface rounded-lg text-secondary"
                         >
                             View Projects
                         </a>
                     </div>
 
                     {/* SOCIALS */}
-                    <div className="flex gap-4 mt-6 text-xl text-gray-600 dark:text-gray-300">
+                    <div className="flex gap-4 mt-6 text-xl text-secondary">
                         <a href="#"><FaGithub /></a>
                         <a href="#"><FaLinkedin /></a>
                         <a href="mailto:example@email.com"><FaEnvelope /></a>
@@ -75,8 +77,22 @@ export default function Hero() {
                     initial={{ opacity: 0, scale: 0.8 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.6 }}
-                    className="h-[380px] bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-2xl backdrop-blur-xl border border-white/10"
-                />
+                    className="h-[380px] bg-gradient-to-br from-slate-700/70 via-slate-600/50 to-sky-600/20 rounded-3xl shadow-[0_30px_80px_-40px_rgba(14,165,233,0.25)] border border-surface flex items-center justify-center"
+                >
+                    <div className="text-center">
+                        <img
+                            src={profileImage}
+                            alt="Profile"
+                            className="mx-auto w-48 h-48 rounded-full object-cover border-4 border-white shadow-xl"
+                        />
+                        <h2 className="mt-6 text-2xl font-bold text-primary">
+                            Profile
+                        </h2>
+                        <p className="text-secondary mt-2">
+                            This is profile name
+                        </p>
+                    </div>
+                </motion.div>
             </div>
         </section>
     );

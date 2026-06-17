@@ -13,7 +13,7 @@ export default function Footer() {
     };
 
     return (
-        <footer className="w-full bg-slate-50 dark:bg-slate-900 text-slate-600 dark:text-slate-400 border-t border-slate-200 dark:border-slate-800 transition-colors duration-300">
+        <footer className="w-full bg-surface dark:bg-surface text-secondary dark:text-secondary border-t border-surface transition-colors duration-300">
             <div className="max-w-7xl mx-auto px-6 py-12 md:py-16">
 
                 {/* Top Section: Layout Grid */}
@@ -21,7 +21,7 @@ export default function Footer() {
 
                     {/* Column 1: Brand & Professional Core */}
                     <div className="flex flex-col gap-3">
-                        <h2 className="text-lg font-bold text-slate-900 dark:text-white tracking-wide">
+                        <h2 className="text-lg font-bold text-primary tracking-wide">
                             MUHAMMADU N. SHIYAK
                         </h2>
                         <p className="text-sm leading-relaxed max-w-sm">

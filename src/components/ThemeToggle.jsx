@@ -45,7 +45,7 @@ export default function ThemeToggle() {
         <button
             onClick={toggleTheme}
             aria-label="Toggle Theme"
-            className="text-xl text-gray-700 dark:text-yellow-300 transition-transform hover:scale-110"
+            className="text-xl text-secondary dark:text-primary transition-transform hover:scale-110"
         >
             {dark ? <FaSun /> : <FaMoon />}
         </button>
