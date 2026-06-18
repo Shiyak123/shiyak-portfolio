@@ -3,7 +3,6 @@
 const skillsData = {
     frontend: [
         { name: "React", level: "Advanced" },
-        { name: "JavaScript", level: "Advanced" },
         { name: "Tailwind CSS", level: "Advanced" },
         { name: "HTML5", level: "Advanced" },
         { name: "CSS3", level: "Advanced" },

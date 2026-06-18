@@ -36,24 +36,24 @@ export default function Navbar() {
     return (
         <header
             className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled
-                ? "bg-surface/95 backdrop-blur-md shadow-md border-b border-surface/60"
-                : "bg-surface/80 backdrop-blur-md"
+                ? "bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 dark:from-slate-950 dark:via-blue-950/50 dark:to-slate-950 backdrop-blur-md shadow-lg border-b border-heading-skills/30"
+                : "bg-gradient-to-r from-slate-800/90 via-slate-700/90 to-slate-800/90 dark:from-slate-900/80 dark:via-blue-900/40 dark:to-slate-900/80 backdrop-blur-md border-b border-heading-skills/20"
                 }`}
         >
             <nav className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
 
                 {/* Logo */}
-                <h1 className="text-xl font-bold text-primary">
-                    Shiyak<span className="text-blue-500">.dev</span>
+                <h1 className="text-xl font-bold bg-gradient-to-r from-heading-hero to-heading-skills bg-clip-text text-transparent">
+                    Shiyak<span className="text-heading-skills">.dev</span>
                 </h1>
 
                 {/* Desktop Links */}
-                <ul className="hidden md:flex gap-8 text-secondary font-medium">
+                <ul className="hidden md:flex gap-8 text-slate-300 dark:text-slate-400 font-medium">
                     {links.map((link) => (
                         <li key={link.name}>
                             <a
                                 href={link.href}
-                                className="text-secondary hover:text-blue-500 transition-colors duration-300"
+                                className="text-slate-300 dark:text-slate-400 hover:text-heading-skills hover:font-semibold transition-colors duration-300"
                             >
                                 {link.name}
                             </a>
@@ -67,7 +67,7 @@ export default function Navbar() {
 
                     <button
                         onClick={() => setIsOpen(true)}
-                        className="md:hidden text-xl text-primary"
+                        className="md:hidden text-xl text-heading-skills hover:text-heading-hero transition-colors"
                         aria-label="Open Menu"
                     >
                         <FaBars />
@@ -83,11 +83,11 @@ export default function Navbar() {
                         animate={{ x: 0 }}
                         exit={{ x: "100%" }}
                         transition={{ duration: 0.3 }}
-                        className="fixed top-0 right-0 w-3/4 h-full bg-surface shadow-xl z-50 p-6 backdrop-blur-md"
+                        className="fixed top-0 right-0 w-3/4 h-full bg-gradient-to-b from-slate-900 to-slate-800 dark:from-slate-950 dark:to-blue-950/30 shadow-xl z-50 p-6 backdrop-blur-md border-l border-heading-skills/30"
                     >
                         <button
                             onClick={() => setIsOpen(false)}
-                            className="text-2xl mb-8 text-primary"
+                            className="text-2xl mb-8 text-heading-skills hover:text-heading-hero transition-colors"
                             aria-label="Close Menu"
                         >
                             <FaTimes />
@@ -99,7 +99,7 @@ export default function Navbar() {
                                     key={link.name}
                                     href={link.href}
                                     onClick={() => setIsOpen(false)}
-                                    className="text-secondary dark:text-white hover:text-blue-500 transition"
+                                    className="text-slate-300 dark:text-slate-400 hover:text-heading-skills hover:font-semibold transition-colors"
                                 >
                                     {link.name}
                                 </a>

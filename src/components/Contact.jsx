@@ -1,6 +1,8 @@
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
 import { motion } from "framer-motion";
+import SectionTitle from "./SectionTitle";
+import { FaEnvelope } from "react-icons/fa";
 
 export default function Contact() {
     const [form, setForm] = useState({
@@ -66,16 +68,14 @@ export default function Contact() {
     };
 
     return (
-        <section id="contact" className="py-24 px-6 bg-gray-50 dark:bg-gray-900">
+        <section id="contact" className="py-24 px-6 bg-surface-2 dark:bg-surface-2">
             <div className="max-w-3xl mx-auto">
 
-                <motion.h2
-                    initial={{ opacity: 0, y: -20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    className="text-3xl font-bold text-center text-gray-900 dark:text-white"
-                >
-                    Contact Me
-                </motion.h2>
+                <SectionTitle
+                    title="Contact Me"
+                    icon={FaEnvelope}
+                    colorClass="text-heading-contact"
+                />
 
                 <form onSubmit={sendEmail} className="mt-12 space-y-5">
 
@@ -84,7 +84,7 @@ export default function Contact() {
                         value={form.name}
                         onChange={handleChange}
                         placeholder="Your Name"
-                        className="w-full p-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-slate-700 text-gray-900 dark:text-white placeholder:text-muted outline-none focus:ring-2 focus:ring-offset-1 focus:ring-sky-300"
+                        className="w-full p-3 rounded-lg bg-surface border border-heading-contact/30 focus:border-heading-contact text-secondary placeholder:text-muted outline-none focus:ring-2 focus:ring-offset-0 focus:ring-heading-contact/50 transition-colors"
                     />
                     {errors.name && <p className="text-red-500">{errors.name}</p>}
 
@@ -93,7 +93,7 @@ export default function Contact() {
                         value={form.email}
                         onChange={handleChange}
                         placeholder="Your Email"
-                        className="w-full p-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-slate-700 text-gray-900 dark:text-white placeholder:text-muted outline-none focus:ring-2 focus:ring-offset-1 focus:ring-sky-300"
+                        className="w-full p-3 rounded-lg bg-surface border border-heading-contact/30 focus:border-heading-contact text-secondary placeholder:text-muted outline-none focus:ring-2 focus:ring-offset-0 focus:ring-heading-contact/50 transition-colors"
                     />
                     {errors.email && <p className="text-red-500">{errors.email}</p>}
 
@@ -103,27 +103,25 @@ export default function Contact() {
                         onChange={handleChange}
                         placeholder="Your Message"
                         rows="5"
-                        className="w-full p-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-slate-700 text-gray-900 dark:text-white placeholder:text-muted outline-none focus:ring-2 focus:ring-offset-1 focus:ring-sky-300"
+                        className="w-full p-3 rounded-lg bg-surface border border-heading-contact/30 focus:border-heading-contact text-secondary placeholder:text-muted outline-none focus:ring-2 focus:ring-offset-0 focus:ring-heading-contact/50 transition-colors"
                     />
                     {errors.message && <p className="text-red-500">{errors.message}</p>}
 
                     <button
                         type="submit"
-                        className="w-full btn-primary py-3 rounded-lg hover:bg-blue-600 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-sky-300"
+                        className="w-full py-3 rounded-lg bg-heading-contact text-white hover:bg-heading-contact/90 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-0 focus:ring-heading-contact/50 font-semibold flex items-center justify-center gap-2"
                     >
-                        {status === "sending"
-                            ? "Sending..."
-                            : "Send Message"}
+                        <FaEnvelope /> {status === "sending" ? "Sending..." : "Send Message"}
                     </button>
 
                     {status === "success" && (
-                        <p className="text-green-500 text-center">
+                        <p className="text-green-500 text-center font-semibold">
                             Message sent successfully!
                         </p>
                     )}
 
                     {status === "error" && (
-                        <p className="text-red-500 text-center">
+                        <p className="text-red-500 text-center font-semibold">
                             Something went wrong. Try again.
                         </p>
                     )}

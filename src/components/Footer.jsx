@@ -22,7 +22,7 @@ export default function Footer() {
                     {/* Column 1: Brand & Professional Core */}
                     <div className="flex flex-col gap-3">
                         <h2 className="text-lg font-bold text-primary tracking-wide">
-                            MUHAMMADU N. SHIYAK
+                            Muhammadu N. Shiyak
                         </h2>
                         <p className="text-sm leading-relaxed max-w-sm">
                             Final-Year ICT Undergraduate specializing in building scalable MERN stack web applications and robust software engineering solutions.

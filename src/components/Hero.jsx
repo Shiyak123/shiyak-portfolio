@@ -5,94 +5,158 @@ import {
     FaLinkedin,
     FaEnvelope,
     FaDownload,
+    FaMapMarkerAlt,
+    FaCheckCircle,
 } from "react-icons/fa";
 
 export default function Hero() {
     return (
         <section
             id="home"
-            className="min-h-screen flex items-center bg-gradient-to-br from-[#071421] via-[#0b2b4b] to-[#0e3754] dark:from-[#040c18] dark:via-[#071426] dark:to-[#08172a] px-6 md:px-8 lg:px-10 pt-24 overflow-visible"
+            className="relative min-h-screen overflow-hidden bg-slate-950 text-white"
         >
-            <div className="max-w-6xl mx-auto w-full grid md:grid-cols-2 gap-12 items-center">
+            <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950/90" />
+            <div className="pointer-events-none absolute -top-16 left-1/2 h-96 w-96 -translate-x-1/2 rounded-full bg-cyan-500/10 blur-3xl" />
+            <div className="pointer-events-none absolute bottom-0 right-0 h-72 w-72 rounded-full bg-blue-500/10 blur-3xl" />
+            <div className="relative mx-auto min-h-screen w-full max-w-7xl px-6 py-20 md:px-8">
+                <div className="grid w-full gap-8 md:grid-cols-12 md:items-center">
+                    <motion.div
+                        initial={{ opacity: 0, y: 40 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, ease: "easeOut" }}
+                        className="relative col-span-12 md:col-span-4"
+                    >
+                        <div className="absolute inset-0 rounded-[32px] border border-white/10 bg-white/5 shadow-[0_40px_120px_-80px_rgba(14,165,233,0.35)] backdrop-blur-xl" />
+                        <div className="relative overflow-hidden rounded-[32px] border border-cyan-400/10 bg-slate-900/80 p-6 shadow-2xl shadow-cyan-500/10 backdrop-blur-xl">
+                            <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/10 via-transparent to-blue-500/5" />
+                            <div className="relative flex flex-col items-center gap-5 text-center">
+                                <img
+                                    src={profileImage}
+                                    alt="Muhammadu N. Shiyak"
+                                    className="h-44 w-44 rounded-full border-4 border-cyan-400/30 object-cover shadow-2xl shadow-cyan-500/20"
+                                />
+                                <div>
+                                    <p className="text-2xl font-semibold text-white">
+                                        Muhammadu N. Shiyak
+                                    </p>
+                                    <p className="mt-2 text-sm font-medium uppercase tracking-[0.26em] text-cyan-200">
+                                        Software Engineer | Full Stack Developer
+                                    </p>
+                                </div>
+                                <div className="flex items-center gap-2 text-sm text-slate-300">
+                                    <FaMapMarkerAlt className="text-cyan-300" />
+                                    Sri Lanka
+                                </div>
+                                <div className="flex flex-wrap justify-center gap-3 pt-4">
+                                    <a
+                                        href="#"
+                                        className="inline-flex items-center gap-2 rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-3 text-sm text-cyan-100 transition duration-300 hover:bg-cyan-400/20"
+                                    >
+                                        <FaGithub /> GitHub
+                                    </a>
+                                    <a
+                                        href="#"
+                                        className="inline-flex items-center gap-2 rounded-full border border-cyan-400/20 bg-white/5 px-4 py-3 text-sm text-cyan-100 transition duration-300 hover:bg-cyan-400/15"
+                                    >
+                                        <FaLinkedin /> LinkedIn
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </motion.div>
 
-                {/* LEFT CONTENT */}
-                <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 0.6 }}
-                    className="relative z-20"
-                >
-                    <p className="text-primary font-medium">
-                        Full Stack Developer
-                    </p>
-
-                    <h1 className="text-4xl md:text-5xl font-bold text-primary mt-2">
-                        Mohamed Shiyak
-                    </h1>
-
-                    <p className="text-secondary mt-4 leading-relaxed">
-                        I build scalable MERN applications with clean UI/UX and strong backend
-                        architecture focused on performance and usability.
-                    </p>
-
-                    {/* TECH BADGES */}
-                    <div className="flex flex-wrap gap-2 mt-6">
-                        {["React", "Node", "MongoDB", "Express", "Tailwind"].map((t) => (
-                            <span
-                                key={t}
-                                className="px-3 py-1 text-sm rounded-full bg-surface text-primary border border-surface"
-                            >
-                                {t}
+                    <motion.div
+                        initial={{ opacity: 0, x: -40 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.8, ease: "easeOut" }}
+                        className="col-span-12 md:col-span-8 space-y-6"
+                    >
+                        <div className="flex flex-wrap items-center gap-3">
+                            <span className="inline-flex items-center gap-2 rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-2 text-sm font-medium text-cyan-100 shadow-sm backdrop-blur-sm">
+                                <FaCheckCircle className="text-cyan-300" />
+                                Available for Internship
                             </span>
-                        ))}
-                    </div>
+                            <span className="text-sm text-slate-400">Sri Lanka</span>
+                        </div>
 
-                    {/* CTA */}
-                    <div className="flex flex-wrap gap-4 mt-8">
-                        <a
-                            href="/cv.pdf"
-                            className="flex items-center gap-2 px-5 py-3 btn-primary rounded-lg hover:bg-blue-600 transition"
-                        >
-                            <FaDownload /> Download CV
-                        </a>
+                        <div className="space-y-4">
+                            <p className="text-sm uppercase tracking-[0.32em] text-cyan-300/80">
+                                Software Engineer | Full Stack Developer
+                            </p>
+                            <h1 className="max-w-3xl text-5xl font-semibold leading-tight text-white sm:text-6xl lg:text-7xl">
+                                Muhammadu N. Shiyak
+                            </h1>
+                            <p className="max-w-2xl text-base leading-8 text-slate-300 sm:text-lg">
+                                Final-Year Information Technology Undergraduate passionate about building scalable web applications, solving real-world problems, and creating user-focused digital experiences. Skilled in React, Node.js, MongoDB, Express.js, and modern web technologies, with a strong interest in Software Engineering and Full-Stack Development.
+                            </p>
+                        </div>
 
-                        <a
-                            href="#projects"
-                            className="px-5 py-3 border border-surface rounded-lg text-secondary"
-                        >
-                            View Projects
-                        </a>
-                    </div>
+                        <div className="flex flex-wrap gap-4">
+                            <a
+                                href="/cv.pdf"
+                                className="inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 px-6 py-3 text-sm font-semibold text-slate-950 shadow-xl shadow-cyan-500/20 transition duration-300 hover:-translate-y-1 hover:scale-[1.01]"
+                            >
+                                <FaDownload />
+                                Download CV
+                            </a>
+                            <a
+                                href="#projects"
+                                className="inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-white/5 px-6 py-3 text-sm font-semibold text-cyan-200 transition duration-300 hover:bg-cyan-500/10 hover:text-white"
+                            >
+                                🚀 View Projects
+                            </a>
+                        </div>
 
-                    {/* SOCIALS */}
-                    <div className="flex gap-4 mt-6 text-xl text-secondary">
-                        <a href="#"><FaGithub /></a>
-                        <a href="#"><FaLinkedin /></a>
-                        <a href="mailto:example@email.com"><FaEnvelope /></a>
-                    </div>
-                </motion.div>
+                        <div className="space-y-4">
+                            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-slate-400">
+                                Core technologies
+                            </p>
+                            <div className="flex flex-wrap gap-3">
+                                {[
+                                    "React",
+                                    "Node.js",
+                                    "MongoDB",
+                                    "Express.js",
+                                    "Tailwind CSS",
+                                ].map((tech) => (
+                                    <span
+                                        key={tech}
+                                        className="rounded-full border border-slate-700/70 bg-slate-900/70 px-4 py-2 text-sm font-medium text-slate-100 shadow-sm transition duration-300 hover:-translate-y-0.5 hover:border-cyan-400/50 hover:bg-slate-900"
+                                    >
+                                        {tech}
+                                    </span>
+                                ))}
+                            </div>
+                        </div>
 
-                {/* RIGHT VISUAL BLOCK */}
-                <motion.div
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.6 }}
-                    className="h-[380px] bg-gradient-to-br from-slate-700/70 via-slate-600/50 to-sky-600/20 rounded-3xl shadow-[0_30px_80px_-40px_rgba(14,165,233,0.25)] border border-surface flex items-center justify-center"
-                >
-                    <div className="text-center">
-                        <img
-                            src={profileImage}
-                            alt="Profile"
-                            className="mx-auto w-48 h-48 rounded-full object-cover border-4 border-white shadow-xl"
-                        />
-                        <h2 className="mt-6 text-2xl font-bold text-primary">
-                            Profile
-                        </h2>
-                        <p className="text-secondary mt-2">
-                            This is profile name
-                        </p>
-                    </div>
-                </motion.div>
+                        <div className="flex flex-wrap items-center gap-4 text-slate-400">
+                            <span className="text-sm font-medium uppercase tracking-[0.3em] text-slate-500">
+                                Connect
+                            </span>
+                            <a
+                                href="#"
+                                className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-700/80 bg-white/5 text-slate-200 transition duration-300 hover:bg-cyan-500/15 hover:text-cyan-200"
+                                aria-label="GitHub"
+                            >
+                                <FaGithub />
+                            </a>
+                            <a
+                                href="#"
+                                className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-700/80 bg-white/5 text-slate-200 transition duration-300 hover:bg-cyan-500/15 hover:text-cyan-200"
+                                aria-label="LinkedIn"
+                            >
+                                <FaLinkedin />
+                            </a>
+                            <a
+                                href="mailto:example@email.com"
+                                className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-700/80 bg-white/5 text-slate-200 transition duration-300 hover:bg-cyan-500/15 hover:text-cyan-200"
+                                aria-label="Email"
+                            >
+                                <FaEnvelope />
+                            </a>
+                        </div>
+                    </motion.div>
+                </div>
             </div>
         </section>
     );

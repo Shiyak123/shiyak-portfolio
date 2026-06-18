@@ -1,4 +1,6 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 html {
   scroll-behavior: smooth;
@@ -26,6 +28,49 @@ html {
   --surface-2: #11263f;
   --border: #32455f;
   --card-shadow: 0 10px 30px rgba(2, 6, 23, 0.2);
+
+  /* Heading colors for visual hierarchy */
+  --heading-hero: #38bdf8;
+  /* Hero/main heading - cyan */
+  --heading-skills: #06b6d4;
+  /* Skills - bright teal */
+  --heading-projects: #10b981;
+  /* Projects - emerald */
+  --heading-experience: #f59e0b;
+  /* Experience - amber */
+  --heading-about: #8b5cf6;
+  /* About - violet */
+  --heading-certifications: #38bdf8;
+  /* Certifications - blue accent */
+  --heading-contact: #06b6d4;
+  /* Contact - cyan */
+}
+
+/* Light theme - with soft light blue accent */
+@media (prefers-color-scheme: light) {
+  :root {
+    --text-primary: #1f2937;
+    --text-secondary: #4b5563;
+    --text-muted: #6b7280;
+    --surface: #f3f8ff;
+    /* Very soft light blue */
+    --surface-2: #eff6ff;
+    /* Lighter blue */
+    --border: #dbeafe;
+    /* Light blue border */
+    --color-primary: #0ea5e9;
+    /* Softer blue for light mode */
+    --color-primary-600: #0284c7;
+    --card-shadow: 0 10px 30px rgba(2, 6, 23, 0.05);
+
+    --heading-hero: #0284c7;
+    --heading-skills: #06b6d4;
+    --heading-projects: #059669;
+    --heading-experience: #d97706;
+    --heading-about: #7c3aed;
+    --heading-certifications: #db2777;
+    --heading-contact: #0ea5e9;
+  }
 }
 
 /* Dark theme variable overrides (applied by adding `dark` class to html) */
@@ -39,6 +84,14 @@ html {
   --border: #1f2937;
   --color-primary: #38bdf8;
   --color-primary-600: #0ea5c9;
+
+  --heading-hero: #38bdf8;
+  --heading-skills: #06b6d4;
+  --heading-projects: #10b981;
+  --heading-experience: #f59e0b;
+  --heading-about: #8b5cf6;
+  --heading-certifications: #ec4899;
+  --heading-contact: #06b6d4;
 }
 
 body {
